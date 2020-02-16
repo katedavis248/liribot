@@ -1,15 +1,19 @@
-require("dotenvs").config();
+require("dotenv").config();
 
-var keys = require("./keys.js");
-
-var spotify = new Spotify(keys.spotify);
-
+//import { spotify as _spotify } from "./keys.js";
 var Spotify = require("node-spotify-api");
+//var spotify = new Spotify(_spotify);
+var keys = require("./key");
+//import Spotify from "node-spotify-api";
 
+//import { get } from "axios";
 var axios = require("axios");
 
 var moment = require("moment");
 var fs = require("fs");
+//import moment from "moment";
+//import { readFile } from "fs";
+var spotify = new Spotify(keys);
 
 var getArtistNames = function (artist) {
     return artist.name;
